@@ -1,0 +1,47 @@
+$_SESSION['City']
+$_SESSION['Today']
+$_SESSION['Schedule1']
+$_SESSION['Schedule2']
+$_SESSION['Schedule3']
+$_SESSION['CurrentDayID']
+$_SESSION['MovieID']
+$_SESSION['MySchedule']
+$_SESSION['SeatOccupied']
+
+
+Note for 1st page :-
+if(schedule is set on any of the button name Morning, Afternoon,Evening then the encode will be 1,0,0 for morning)
+if(schedule is set on any then the encode will be 1,1,1)
+
+stored sessions-
+$_SESSION['City']
+$_SESSION['Today']
+$_SESSION['Schedule1']
+$_SESSION['Schedule2']
+$_SESSION['Schedule3']
+$_SESSION['CurrentDayID']// it will be 0 for today, 1 for tommorow and 2 day after tommorow
+$_SESSION['SeatOccupied']// limit to0
+
+
+Note for 2nd Movie Selection page
+
+stored sessions-
+$_SESSION['MovieID']
+
+
+
+Note for the blockbuster page :-
+schedule boxes encode will be 
+blockbustorid_1,blockbustorid_2,blockbustorid_3
+blockbustorid_1,blockbustorid_2,blockbustorid_3
+and so on
+
+stored in-
+$_SESSION['MySchedule']="blockbustorid_1";
+
+
+
+Note for the book seat:-
+assuming that multiplex don't change their movie every day
+total seats 20
+you can book only 5 seats using $_SESSION['SeatOccupied']++ to check

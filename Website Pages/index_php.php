@@ -1,17 +1,22 @@
 <?php
+//this page will be called by the index.php file , data of city,today,schedule will be passed to store in the sessions and arrange the movies currently ongoing in the entered city.
+
 session_start();
         include("db_con.php");
-        
+       
         if(isset($_GET['City'])){
         $_SESSION['City']= $_GET['City'];//Lucknow
         $_SESSION['Today']=  $_GET['Today'];//2
-        $_SESSION['Schedule']=  $_GET['Schedule'];//1,2,3
-
+        $_SESSION['Schedule1']=  $_GET['Schedule1'];//0,1
+		$_SESSION['Schedule2']=  $_GET['Schedule2'];//0,1
+		$_SESSION['Schedule3']=  $_GET['Schedule3'];//0,1
+		$_SESSION['CurrentDayID']=$_GET['CurrentDayID'];//0 for today, 1 for tommorow, 2 day after tommorow
         
         //get the city and select all the malls movie id in array in non repeating format
         
         $allMovies=array();
-        $sql="Select Movie1,Movie2,Movie3 from BlockBuster where City='$_SESSION['City']'";
+		$city=$_SESSION['City'];
+        $sql="Select Movie1,Movie2,Movie3 from BlockBuster where City='$city'";
         $run=mysqli_query($con,$sql);
                 
          if($run>0)
@@ -109,6 +114,30 @@ session_start();
                            }
                  }
         }
+		
+		// Date
+        date_default_timezone_set('Asia/Kolkata');
+        echo date('d');//write today
+        echo date('D', strtotime($date .' +1 day'));
+        echo date('D', strtotime($date .' +2 day'));
 
+  /*
+        //extra example
+        
+        $sql="Select * from BlockBuster where (Movie1ID=1 or Movie2ID=1 or Movie3ID=1) and City='Lucknow'";
+                 $run=mysqli_query($con,$sql);
+                
+                 if($run>0)
+                 {
+                 echo "Runed";
+                         while($data=mysqli_fetch_assoc($run))
+                           {
+                                   echo $data['City'];
+                           }
+                 }else{
+                 echo "Prob";
+                 }
 
+*/
+$con->close();
 ?>
