@@ -32,39 +32,25 @@ Responsibilities taken by each team member for building the system:-
 
 
 Steps to execute the solution
-Note for 1st page :-
-if(schedule is set on any of the button name Morning, Afternoon,Evening then the encode will be 1,0,0 for morning)
-if(schedule is set on any then the encode will be 1,1,1)
+-Landing Page:- collects location and timing slots of perticular day
 
-stored sessions-
-$_SESSION['City']
-$_SESSION['Today']
-$_SESSION['Schedule1']
-$_SESSION['Schedule2']
-$_SESSION['Schedule3']
-$_SESSION['CurrentDayID']// it will be 0 for today, 1 for tommorow and 2 day after tommorow
-$_SESSION['SeatOccupied']// limit to0
+-Movies Selection Page:- fetch the data from the database according to the location 
+provided by the user and show all the movies shecduled on the multiplexes of that city
 
+-Multiplex detail Page:- when you select any of the movie you want to book from the second page.
+ third page gives all the multiplex that are scheduled for that perticular movie with their timing slots
+All the slots are provied which are already booked and the free ones.
+you can select the seat according to you and then save those seats
 
-Note for 2nd Movie Selection page
+-BookShow Page:- All the information are provided which is done by user. 
+Information Like:-
+*Movie Selected Name
+*Movie rating
+*Movie Language
+*Movie Multiplex Name
+*Movie Multiplex Address
+*Movie Multiplex City
+*And Your Booked Seats
 
-stored sessions-
-$_SESSION['MovieID']
+then you can Login/SignUp and your Seat Will be booked for that selected movie in that selected multiplex
 
-
-
-Note for the blockbuster page :-
-schedule boxes encode will be 
-blockbustorid_1,blockbustorid_2,blockbustorid_3
-blockbustorid_1,blockbustorid_2,blockbustorid_3
-and so on
-
-stored in-
-$_SESSION['MySchedule']="blockbustorid_1";
-
-
-
-Note for the book seat:-
-assuming that multiplex don't change their movie every day
-total seats 20
-you can book only 5 seats using $_SESSION['SeatOccupied']++ to check
