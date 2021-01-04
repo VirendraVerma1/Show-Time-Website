@@ -79,13 +79,13 @@ session_start();
 <br>
 <h3>SignUp</h3>
 <br>
-<input type="text" name="firstname" placeholder="First name:"> 
+<input type="text" name="firstname" placeholder="First name:" required> 
 <br>
-<input type="text" name="lastname" placeholder="Last name:"> 
+<input type="text" name="lastname" placeholder="Last name:" required> 
 <br>
-<input type="text" name="email" placeholder="Email:"> 
+<input type="email" name="email" placeholder="Email:" required> 
 <br>
-<input type="text" name="password" placeholder="Password:"> 
+<input type="password" name="password" placeholder="Password:" required> 
 <br>
 <input type="hidden" name="signup" value="1" />
 <br>
@@ -96,9 +96,9 @@ session_start();
 <br><br>
 <h3>LogIn</h3>
 <br>
-<input type="text" name="email" placeholder="Email:">
+<input type="email" name="email" placeholder="Email:" required>
 <br>
-<input type="text" name="password" placeholder="Password:"> 
+<input type="password" name="password" placeholder="Password:" required> 
 <br>
 <br>
 <input type="hidden" name="login" value="1" />
