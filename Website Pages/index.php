@@ -6,6 +6,41 @@
 		 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet'>
 		  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
 </head>
+<style>
+#green{
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+#green {
+  background-color: green;
+}
+#red{
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+#red {
+  background-color: blue;
+}
+#blue{
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+#blue {
+  background-color: blue;
+}
+</style>
 <body>
 
 	<div class="bgimage">
@@ -28,11 +63,21 @@
 		</div>
 
 		<div class="text">
-			<h4> FRIENDS • FAMILIES • ASSOCIATES • CHILDREN </h4>
-			<h1> SHOWS FOR EVERYONE </h1>
+                        <h1> SHOWS FOR EVERYONE </h1>
 			<h3> Book Now And Cherish Some Leisure Hours With Your Loved Ones </h3>
-			<button id="buttonone"> Binge </button>
-			<button id="buttontwo"> Watch </button>
+                        
+                        <form action="movies_select.php" method="post">
+                            Morning:
+                            9:00-11:00 <input type="checkbox" name="morning" value="Yes" /><br>
+                            Afternoon:
+                            12:30-2:30 <input type="checkbox" name="afternoon" value="Yes" /><br>
+                            Evening:
+                            3:00-5:00 <input type="checkbox" name="evening" value="Yes" /><br>
+                            Any:
+                             <input type="checkbox" name="any" value="Yes" /><br><br>
+                             <input type="submit" name="lucknow" value="Lucknow" />
+                             <input type="submit" name="delhi" value="Delhi" />
+                        </form>
 		</div>
 
 	</div>

@@ -9,6 +9,37 @@ session_start();
         $ratingarray=array();
         $languagearray=array();
         $moviearray=array();
+        
+        if(isset($_POST['lucknow'])||isset($_POST['delhi'])){
+                if(isset($_POST['lucknow']))
+                $_GET['City']="Lucknow";
+                else{
+                $_GET['City']="Delhi";
+                }
+                if(isset($_POST['morning']) && $_POST['morning'] == 'Yes') 
+                {
+                    $_GET['Schedule1']=1;
+                }
+                if(isset($_POST['afternoon']) && $_POST['afternoon'] == 'Yes') 
+                {
+                    $_GET['Schedule2']=1;
+                }
+                if(isset($_POST['evening']) && $_POST['evening'] == 'Yes') 
+                {
+                    $_GET['Schedule3']=1;
+                }
+                if(isset($_POST['any']) && $_POST['any'] == 'Yes') 
+                {
+                    $_GET['Schedule1']=1;
+                    $_GET['Schedule2']=1;
+                    $_GET['Schedule3']=1;
+                }
+                date_default_timezone_set('Asia/Kolkata');
+        
+                $_GET['Today']=date('d');
+                $_GET['CurrentDayID']=0;
+        }
+        
        
         if(isset($_GET['City'])){
         $_SESSION['City']= $_GET['City'];//Lucknow
@@ -124,9 +155,9 @@ session_start();
 		
 		// Date
         date_default_timezone_set('Asia/Kolkata');
-        echo date('d');//write today
-        echo date('D', strtotime($date .' +1 day'));
-        echo date('D', strtotime($date .' +2 day'));
+        //echo date('d');//write today
+        //echo date('D', strtotime($date .' +1 day'));
+        //echo date('D', strtotime($date .' +2 day'));
         
         
 
